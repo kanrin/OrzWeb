@@ -17,6 +17,14 @@ export default class Component extends Element {
         this.render()
     }
 
+    addEvent(e, t, f) {
+        this.event[e] = t[f]
+    }
+
+    delEvent(e) {
+        delete this.event[e]
+    }
+
     setAttr(name, value) {
 		this.attr[name] = value
         this.render()
@@ -38,7 +46,16 @@ export default class Component extends Element {
     }
 
     render() {
+        this.beforRender()
         this.html = this.generate()
+        this.afterRender()
     }
 
+    beforRender() {
+
+    }
+
+    afterRender() {
+
+    }
 }

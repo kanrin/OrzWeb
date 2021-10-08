@@ -1,8 +1,10 @@
 $body_bg: #eee;
-$main_color1: #ff699a;
+$main_color1: #ca537b;
 $main_color2: #87c97f;
 $main_color3: #46a2d3;
 $main_shadow_color1: scale-color($main_color1, $lightness: 25%);
+$main_shadow_color2: scale-color($main_color2, $lightness: 25%);
+$main_shadow_color3: scale-color($main_color3, $lightness: 25%);
 $font_color1: #030309;
 $font_color2: scale-color($font_color1, $lightness: 20%);
 $font_color3: scale-color($font_color1, $lightness: 50%);
@@ -12,15 +14,15 @@ body {
     color: $font_color1;
 }
 
-.main {
+.main1 {
     color: $main_color1;
     text-shadow: $main_shadow_color1 0 0 10px;
     animation-iteration-count: infinite;
-    animation-name: breath;
+    animation-name: breath1;
     animation-duration: 2s;
 }
 
-@keyframes breath {
+@keyframes breath1 {
     0% {
         text-shadow: $main_shadow_color1 0 0 10px;
     }
@@ -34,7 +36,52 @@ body {
     }
 }
 
+.main2 {
+    color: $main_color2;
+    text-shadow: $main_shadow_color2 0 0 10px;
+    animation-iteration-count: infinite;
+    animation-name: breath2;
+    animation-duration: 2s;
+}
+
+@keyframes breath2 {
+    0% {
+        text-shadow: $main_shadow_color2 0 0 10px;
+    }
+
+    50% {
+        text-shadow: scale-color($main_shadow_color2, $lightness: 32%) 0 0 15px;
+    }
+
+    100% {
+        text-shadow: $main_shadow_color2 0 0 10px;
+    }
+}
+
+.main3 {
+    color: $main_color3;
+    text-shadow: $main_shadow_color3 0 0 10px;
+    animation-iteration-count: infinite;
+    animation-name: breath3;
+    animation-duration: 2s;
+}
+
+@keyframes breath3 {
+    0% {
+        text-shadow: $main_shadow_color3 0 0 10px;
+    }
+
+    50% {
+        text-shadow: scale-color($main_shadow_color3, $lightness: 32%) 0 0 15px;
+    }
+
+    100% {
+        text-shadow: $main_shadow_color3 0 0 10px;
+    }
+}
 
 .text-2 {
     font-size: 40px;
+    text-align: center;
+    line-height: 2em;
 }

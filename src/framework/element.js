@@ -8,14 +8,6 @@ export default class Element {
 		this.child = child || ""
 	}
 
-	addEvent(e, f) {
-		this.event[e] = f
-	}
-
-	delEvent(e) {
-		delete this.event[e]
-	}
-
 	generate() {
 		const e = document.createElement(this.tag)
 		// 设置attr
@@ -24,7 +16,9 @@ export default class Element {
 		})
 		// 设置事件
 		Object.keys(this.event).map(key => {
-			e.addEventListener(key, this.event[key])
+			e.addEventListener(key, function(){
+				this.event[key]()
+			})
 		})
 		if (typeof this.child === "string") {
 			e.appendChild(document.createTextNode(this.child))
