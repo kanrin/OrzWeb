@@ -1,0 +1,40 @@
+$body_bg: #eee;
+$main_color1: #ff699a;
+$main_color2: #87c97f;
+$main_color3: #46a2d3;
+$main_shadow_color1: scale-color($main_color1, $lightness: 25%);
+$font_color1: #030309;
+$font_color2: scale-color($font_color1, $lightness: 20%);
+$font_color3: scale-color($font_color1, $lightness: 50%);
+
+body {
+    background-color: $body_bg;
+    color: $font_color1;
+}
+
+.main {
+    color: $main_color1;
+    text-shadow: $main_shadow_color1 0 0 10px;
+    animation-iteration-count: infinite;
+    animation-name: breath;
+    animation-duration: 2s;
+}
+
+@keyframes breath {
+    0% {
+        text-shadow: $main_shadow_color1 0 0 10px;
+    }
+
+    50% {
+        text-shadow: scale-color($main_shadow_color1, $lightness: 32%) 0 0 15px;
+    }
+
+    100% {
+        text-shadow: $main_shadow_color1 0 0 10px;
+    }
+}
+
+
+.text-2 {
+    font-size: 40px;
+}

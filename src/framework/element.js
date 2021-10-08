@@ -1,4 +1,3 @@
-import { create } from "enhanced-resolve"
 import Exception from "./exception"
 
 export default class Element {
@@ -15,14 +14,6 @@ export default class Element {
 
 	delEvent(e) {
 		delete this.event[e]
-	}
-
-	setAttr(name, value) {
-		this.attr[name] = value
-	}
-
-	delAttr(name) {
-		delete this.attr[name]
 	}
 
 	generate() {
