@@ -7,7 +7,7 @@ export default class Click extends Component {
             count: 0
         }
         this.tag = "button"
-        this.addEvent("click", this, "click")
+        this.addEvent("click", this.click)
         this.child = `click: ${this.data.count}`
         this.setAttr("class", "text-2")
     }
